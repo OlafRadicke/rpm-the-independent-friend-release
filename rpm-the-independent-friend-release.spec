@@ -1,6 +1,6 @@
 Name: rpm-the-independent-friend-release
 Summary: A yum configuration for the rpm repo https://pm.the-independent-friend.de
-Version: 1
+Version: 2
 Group: yum
 License: MIT
 Release: 1
@@ -28,9 +28,9 @@ fi
 
 mkdir -p %{buildroot}/etc/yum.repos.d/
 echo "[%{name}]"                                     > %{buildroot}/etc/yum.repos.d/%{name}.repo
-echo "name=%{name}"                                  > %{buildroot}/etc/yum.repos.d/%{name}.repo
-echo "baseurl=http://rpm.the-independent-friend.de/" > %{buildroot}/etc/yum.repos.d/%{name}.repo
-echo "gpgcheck=0"                                    > %{buildroot}/etc/yum.repos.d/%{name}.repo
+echo "name=%{name}"                                  >> %{buildroot}/etc/yum.repos.d/%{name}.repo
+echo "baseurl=http://rpm.the-independent-friend.de/" >> %{buildroot}/etc/yum.repos.d/%{name}.repo
+echo "gpgcheck=0"                                    >> %{buildroot}/etc/yum.repos.d/%{name}.repo
 
 
 %post
@@ -53,6 +53,8 @@ rm -Rvf %{_builddir}/*
 
 
 %changelog
+* Mon Jul 20 2015 briefkasten@olaf-radicke.de - 1.1
+- Bugfix.
 * Mon Jul 20 2015 briefkasten@olaf-radicke.de - 1.1
 - Init-Version.
 
