@@ -31,6 +31,7 @@ echo "[%{name}]"                                     > %{buildroot}/etc/yum.repo
 echo "name=%{name}"                                  >> %{buildroot}/etc/yum.repos.d/%{name}.repo
 echo "baseurl=http://rpm.the-independent-friend.de/" >> %{buildroot}/etc/yum.repos.d/%{name}.repo
 echo "gpgcheck=0"                                    >> %{buildroot}/etc/yum.repos.d/%{name}.repo
+echo "sslverify=0"                                   >> %{buildroot}/etc/yum.repos.d/%{name}.repo
 
 
 %post
